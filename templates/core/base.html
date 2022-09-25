@@ -7,16 +7,63 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+<style>
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing:border-box;
+}
+nav {
+    padding: 10px 20px;
+    background: #333;
+    color:#fff;
+}
+    nav ul{
+        display:flex;
+        justify-content:end;
+    }
+    nav a {
+        color:white;
+        text-decoration:none;
+
+    }
+    nav a:hover{
+        color:#fF9;
+    }
+    nav li {
+        padding:0 20px;
+    }
+    .container{
+        max-width: 800px;
+        margin: 10px auto;
+
+    }
+    .post{
+        border:1px solid rgba(0,0,0,0.3);
+        padding:10px;
+        border-radius: 10px;
+    }
+    .post h3{
+        font-size: 1.3rem;
+    }
+    .post article{
+        font-size: 1rem;
+        font-style: italic;
+    }
+</style>
     <header>
         <nav>
             <ul style="list-style: none">
-                <li style="display: inline-block; padding: 10px 20px"><a href="{% url 'home'%}">Accueil</a></li>
-                <li style="display: inline-block; padding: 10px 20px"><a href="{% url 'contact' %}">Contact</a></li>
-                <li style="display: inline-block; padding: 10px 20px"><a href="{% url 'about' %}">A propos</a></li>
+                <li ><a href="{% url 'home'%}">Accueil</a></li>
+                <li ><a href="{% url 'contact' %}">Contact</a></li>
+                <li ><a href="{% url 'about' %}">A propos</a></li>
             </ul>
         </nav>
     </header>
+    <div class="container">
+        
     {% block content %}{% endblock %}
+    </div>
 
 </body>
 </html>
